@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  banque-pg:
+    image: 'postgres:13.1-alpine'
+    container_name: db2
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=Banque_service
+    volumes:
+      - ./data/banque:/var/lib/postgresql/data
+    ports:
+      - "5435:5432"
+
+volumes:
+  data:
